@@ -1,93 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Innovation Fair 2025</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    .container {
-      background: white;
-      max-width: 800px;
-      margin: auto;
-      padding: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #003366;
-    }
-    .cta {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .cta a {
-      display: inline-block;
-      padding: 15px 30px;
-      background: #0066cc;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    .cta a:hover {
-      background: #004999;
-    }
-    .footer {
-      font-size: 0.9em;
-      text-align: center;
-      color: #777;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nannim David Dandam - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom animations and styles */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.5s ease-out; }
+        .section-hidden { display: none; }
+        .nav-link { cursor: pointer; }
+        .nav-link.active { border-bottom: 2px solid #1E40AF; color: #1E40AF; }
+        @media (max-width: 768px) {
+            .nav-menu { flex-direction: column; }
+            .nav-link { padding: 1rem; }
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <h1>INNOVATION FAIR</h1>
-    <h2>COLLEGE OF EDUCATION, PANKSHIN</h2>
-    <p>
-      The Department of Computer Science Education cordially invites the entire College Community
-      and members of the public to her 1<sup>st</sup> Innovation Fair. The event is designed to
-      showcase Innovative Ideas, Products, and Projects developed by Students of the department,
-      aimed at solving real-life problems and improving societal well-being.
-    </p>
+<body class="bg-gray-100 font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-blue-800">Nannim David Dandam</h1>
+                </div>
+                <div class="flex items-center nav-menu">
+                    <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600 active" data-section="home">Home</span>
+                    <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600" data-section="profile">Profile</span>
+                    <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600" data-section="education">Education</span>
+                    <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600" data-section="experience">Experience</span>
+                    <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600" data-section="skills">Skills</span>
+                    <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600" data-section="achievements">Achievements</span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <h3>Theme:</h3>
-    <p><strong>"Innovative Ideas and Solutions for a Better Society"</strong></p>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+        <!-- Home Section -->
+        <section id="home" class="fade-in">
+            <div class="text-center py-10">
+                <h2 class="text-4xl font-bold text-blue-800 mb-4">Nannim David Dandam</h2>
+                <h3 class="text-2xl text-gray-600 mb-6">PHP/Laravel Developer</h3>
+                <p class="text-lg mb-4">+2348141232871 | dandamnannim125@gmail.com</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Dynamic and results-oriented professional with over five years of experience in Vanilla PHP, Laravel, and Vue.js, driving developmental growth in fast-paced environments.</p>
+                <a href="mailto:dandamnannim125@gmail.com" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Contact Me</a>
+            </div>
+        </section>
 
-    <h3>Date:</h3>
-    <p>Tuesday, 16<sup>th</sup> July, 2024</p>
+        <!-- Profile Section -->
+        <section id="profile" class="section-hidden">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Profile</h2>
+            <p class="text-gray-600 leading-relaxed">I am a dynamic and results-oriented professional with over five years of experience with Vanilla PHP, Laravel, and Vue.js. I have proven expertise in codebase assimilation, building strategic modules, detailed ecosystems, and executing data-driven coding campaigns to create scalable applications and improve existing ones. Skilled in collaborating across departments to ensure quality control and improve customer experience, I am armed with strong analytical, communication, and problem-solving abilities. Passionate about innovation and process improvement, I thrive in entrepreneurial settings with a keen focus on delivering results and aligning with organizational goals.</p>
+        </section>
 
-    <h3>Venue:</h3>
-    <p>College Auditorium</p>
+        <!-- Education Section -->
+        <section id="education" class="section-hidden">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Education & Certifications</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold">Bachelor of Science in Computer Science</h3>
+                    <p class="text-gray-600">Babcock University, Ilisan Remo, Ogun State, Nigeria (2010–2016)</p>
+                    <p class="text-gray-600">Courses: Operations and Research, System Analysis and Design, Data Structures and Algorithms, Artificial Intelligence, Operating Systems, Software Engineering, Logic and Design, Communication in English, Internet Technology.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Professional Diploma in Education</h3>
+                    <p class="text-gray-600">Ahmadu Bello University, Zaria, Nigeria (2018)</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Senior Secondary School Certificate Examination (SSCE)</h3>
+                    <p class="text-gray-600">Bethel International Christian Academy, Rayfield, Jos, Nigeria (2008–2009)</p>
+                    <p class="text-gray-600">Passed with three distinctions and four credits.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Certifications</h3>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>ICT for Teaching and Learning Certification, Nigeria Commission for Colleges of Education (2023)</li>
+                        <li>Cybersecurity Essentials Certification, CISCO (2021)</li>
+                        <li>CCNAv7: Introduction to Networks Certification, CISCO (2020)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <h3>Time:</h3>
-    <p>10:00am Prompt</p>
+        <!-- Experience Section -->
+        <section id="experience" class="section-hidden">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Work Experience</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold">University Lecturer</h3>
+                    <p class="text-gray-600">Federal University of Education, Pankshin, Nigeria (2020–Present)</p>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>Teach programming courses including Web Programming, C, and Visual Basic.</li>
+                        <li>Interact with students to foster success and longevity in relationships.</li>
+                        <li>Supervise and engineer evaluation materials for optimal departmental performance.</li>
+                        <li>Prepare and deliver quality research and presentations at professional occasions.</li>
+                        <li>Lead and support teams to achieve predefined targets.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Graduate Assistant</h3>
+                    <p class="text-gray-600">Binyaminu Usman Polytechnic, Hadejia, Nigeria (2016–2017)</p>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>Taught introductory Web Programming.</li>
+                        <li>Guided students to achieve predefined learning outcomes.</li>
+                        <li>Incorporated practical experience into learning activities.</li>
+                        <li>Evaluated student performance and provided in-depth reports.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Technical Assistant, Intern</h3>
+                    <p class="text-gray-600">Cetra Computers LTD, Rayfield, Jos, Nigeria (2013)</p>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>Worked on operating system and application software drills.</li>
+                        <li>Collaborated on network creation and maintenance.</li>
+                        <li>Learned to procure, install, and maintain off-grid energy solutions.</li>
+                        <li>Assembled and managed teams to accomplish common goals.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Technical Assistant (Volunteering)</h3>
+                    <p class="text-gray-600">La Paix Universal Resourced LTD, Rayfield, Jos, Nigeria (2017–Present)</p>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>Act as a technical procurement adviser for equipment and facilities.</li>
+                        <li>Provide advisory services for equipment operations and quality assurance.</li>
+                        <li>Ensure smooth technical operations across the company and partners.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <div class="cta">
-      <a href="https://forms.gle/i6TVV4dsyEi6dtUt8" target="_blank">Sign Up Now</a>
-    </div>
+        <!-- Skills Section -->
+        <section id="skills" class="section-hidden">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Professional Skills</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-600">
+                <li class="bg-white p-4 rounded-lg shadow">Web Application Development</li>
+                <li class="bg-white p-4 rounded-lg shadow">Analytical and Strategic Thinking</li>
+                <li class="bg-white p-4 rounded-lg shadow">Project and Process Management</li>
+                <li class="bg-white p-4 rounded-lg shadow">Communication and Presentation</li>
+                <li class="bg-white p-4 rounded-lg shadow">Problem-Solving Innovation</li>
+            </ul>
+        </section>
 
-    <p>
-      The Innovation Fair is an opportunity to witness first-hand the potential of our students
-      and how their ideas can drive change. Come and be inspired!
-    </p>
+        <!-- Achievements Section -->
+        <section id="achievements" class="section-hidden">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Achievements</h2>
+            <p class="text-gray-600">2023 TETFund IBR Grant Winner</p>
+        </section>
+    </main>
 
-    <p>
-      For more inquiries, contact: <br/>
-      Dr. James Bala (HOD) - 08012345678 <br/>
-      Mr. Nannim Dandam (Secretary) - 08098765432
-    </p>
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white text-center py-6">
+        <p>&copy; 2025 Nannim David Dandam. All rights reserved.</p>
+    </footer>
 
-    <div class="footer">
-      © 2024 Department of Computer Science Education, COE Pankshin.
-    </div>
-  </div>
+    <!-- JavaScript for SPA Navigation -->
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        function showSection(sectionId) {
+            sections.forEach(section => {
+                section.classList.add('section-hidden');
+                section.classList.remove('fade-in');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('section-hidden');
+            targetSection.classList.add('fade-in');
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.section === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const sectionId = link.dataset.section;
+                showSection(sectionId);
+            });
+        });
+
+        // Show home section by default
+        showSection('home');
+    </script>
 </body>
 </html>
