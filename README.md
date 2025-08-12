@@ -25,22 +25,22 @@ You can view the live portfolio by opening `index.html` in a web browser or host
    ```bash
    git clone https://github.com/<your-username>/<your-repo-name>.git
    ```
-2. **Navigate to the Project Directory**:
+2. Navigate to the Project Directory:
    ```bash
    cd <your-repo-name>
    ```
-3. **Open the Website**:
+3. Open the Website:
    - Open `index.html` directly in a web browser for local testing.
    - Alternatively, host the file on a static server (e.g., GitHub Pages, Netlify) for online access.
 
-## Customization
+ Customization
 
-- **Profile Photo**: Replace the placeholder image in `index.html` by updating the `<img src="https://placehold.co/150x150">` in the Home section with a URL to your profile photo.
-- **Content**: Edit the text in the `<section>` elements to update your personal details, experience, or achievements.
-- **Styling**: Modify Tailwind CSS classes or add custom styles in the `<style>` section to change colors, fonts, or layout.
-- **Additional Sections**: Add new `<section>` elements and update the navigation JavaScript to include them in the SPA.
+- Profile Photo: Replace the placeholder image in `index.html` by updating the `<img src="https://placehold.co/150x150">` in the Home section with a URL to your profile photo.
+- Content: Edit the text in the `<section>` elements to update your personal details, experience, or achievements.
+- Styling: Modify Tailwind CSS classes or add custom styles in the `<style>` section to change colors, fonts, or layout.
+- Additional Sections: Add new `<section>` elements and update the navigation JavaScript to include them in the SPA.
 
-## File Structure
+ File Structure
 
 ```
 ├── index.html       # Single HTML file containing the entire SPA
