@@ -15,6 +15,21 @@
         .section-hidden { display: none; }
         .nav-link { cursor: pointer; }
         .nav-link.active { border-bottom: 2px solid #1E40AF; color: #1E40AF; }
+        /* Sticky footer styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+        footer {
+            flex-shrink: 0;
+        }
         @media (max-width: 768px) {
             .nav-menu { flex-direction: column; }
             .nav-link { padding: 1rem; }
