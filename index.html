@@ -30,9 +30,21 @@
         footer {
             flex-shrink: 0;
         }
+        /* Landing page custom styles */
+        .hero-bg {
+            background: linear-gradient(to right, #1E40AF, #60A5FA);
+            color: white;
+        }
+        .profile-img {
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
         @media (max-width: 768px) {
             .nav-menu { flex-direction: column; }
             .nav-link { padding: 1rem; }
+            .hero-bg { padding: 2rem; }
+            .profile-img { margin: 0 auto; }
         }
     </style>
 </head>
@@ -58,14 +70,41 @@
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
-        <!-- Home Section -->
+        <!-- Home Section (Landing Page) -->
         <section id="home" class="fade-in">
-            <div class="text-center py-10">
-                <h2 class="text-4xl font-bold text-blue-800 mb-4">Nannim David Dandam</h2>
-                <h3 class="text-2xl text-gray-600 mb-6">PHP/Laravel Developer</h3>
-                <p class="text-lg mb-4">+2348141232871 | dandamnannim125@gmail.com</p>
-                <p class="text-gray-600 max-w-2xl mx-auto">Dynamic and results-oriented professional with over five years of experience in Vanilla PHP, Laravel, and Vue.js, driving developmental growth in fast-paced environments.</p>
-                <a href="mailto:dandamnannim125@gmail.com" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Contact Me</a>
+            <div class="hero-bg py-16 px-8 rounded-lg shadow-lg">
+                <div class="flex flex-col md:flex-row items-center">
+                    <!-- Profile Photo Placeholder -->
+                    <div class="md:w-1/4 mb-6 md:mb-0">
+                        <img src="https://placehold.co/150x150" alt="Nannim David Dandam Profile Photo" class="profile-img w-32 h-32 md:w-40 md:h-40">
+                    </div>
+                    <!-- Hero Content -->
+                    <div class="md:w-3/4 text-center md:text-left">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4">Nannim David Dandam</h2>
+                        <h3 class="text-2xl md:text-3xl mb-6">PHP/Laravel Developer</h3>
+                        <p class="text-lg mb-4">+2348141232871 | <a href="mailto:dandamnannim125@gmail.com" class="underline hover:text-blue-200">dandamnannim125@gmail.com</a></p>
+                        <p class="text-lg mb-6 max-w-2xl">Dynamic and results-oriented professional with over five years of experience in Vanilla PHP, Laravel, and Vue.js, driving developmental growth in fast-paced environments.</p>
+                        <div class="space-x-4">
+                            <a href="mailto:dandamnannim125@gmail.com" class="inline-block bg-white text-blue-800 px-6 py-3 rounded-lg hover:bg-gray-200 transition">Contact Me</a>
+                            <a href="#experience" class="inline-block bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-blue-800 transition" onclick="showSection('experience')">View Experience</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional Landing Page Content -->
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-blue-800 mb-2">Expertise</h3>
+                    <p class="text-gray-600">Building scalable web applications with PHP, Laravel, and Vue.js.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-blue-800 mb-2">Innovation</h3>
+                    <p class="text-gray-600">Passionate about creating data-driven solutions and process improvements.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-blue-800 mb-2">Collaboration</h3>
+                    <p class="text-gray-600">Skilled in cross-departmental teamwork to enhance quality and user experience.</p>
+                </div>
             </div>
         </section>
 
@@ -167,7 +206,6 @@
         <section id="achievements" class="section-hidden">
             <h2 class="text-3xl font-bold text-blue-800 mb-6">Achievements</h2>
             <p class="text-gray-600">2023 TETFund IBR Grant Winner</p>
-            <p class="text-gray-600">2025 TETFund Innov8 Grant Winner</p>
         </section>
     </main>
 
