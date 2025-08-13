@@ -1,4 +1,4 @@
-This README provides an overview of the project, instructions for setup, customization, and usage, and relevant details about this website's features. It assumes the repository will contain the single `index.html` file.
+This README provides an overview of the project, instructions for setup, customization, and usage, and relevant details about this website's features.
 
 ```markdown
 Nannim David Dandam - Portfolio Website
