@@ -342,39 +342,42 @@
                     </div>
                 </div>
             
-             <!-- Project Four: Innovation Slideshow -->
-            <div class="bg-white p-8 rounded-lg shadow flex flex-col md:flex-row items-center">
-            <span class="inline-block mb-6 md:mb-0 md:mr-8 text-indigo-600" style="width:80px;height:80px; flex-shrink:0;">
-                <!-- VR Headset Glyph -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 24 24">
-                    <rect x="2" y="7" width="20" height="10" rx="5" fill="#6366f1"/>
-                    <rect x="6" y="10" width="4" height="4" rx="2" fill="#fff"/>
-                    <rect x="14" y="10" width="4" height="4" rx="2" fill="#fff"/>
-                    <rect x="8" y="14" width="8" height="2" rx="1" fill="#6366f1"/>
-                </svg>
-            </span>
-            <div class="w-full">
-                <h3 class="text-2xl font-semibold text-blue-800 mb-4">Innovation Gallery</h3>
-                <p class="text-gray-700 mb-4 text-lg">
-                    Explore my Innovation Gallery, a collection of immersive drone visuals and concepts. 
-                    <span class="font-semibold"></span> Collaborated With Microsoft Designer AI to create a dynamic slideshow experience.
-                </p>
-                <div class="relative bg-gray-100 rounded-lg overflow-hidden mb-4" id="vr-slideshow-container" style="max-width:600px;">
-                    <img id="vr-slideshow-img" src="Innovation/slide1 (1).jpeg" alt="Innovation Slide" class="w-full h-64 object-cover transition duration-300">
-                    <button id="vr-prev" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100">
-                        &#8592;
-                    </button>
-                    <button id="vr-next" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100">
-                        &#8594;
-                    </button>
-                    <button id="vr-fullscreen" class="absolute bottom-2 right-2 bg-indigo-600 text-white rounded px-3 py-1 text-sm shadow hover:bg-indigo-800">
-                        Fullscreen
-                    </button>
+                <!-- Project Four: Innovation Slideshow -->
+                <div class="bg-white p-8 rounded-lg shadow flex flex-col md:flex-row items-center">
+                    <span class="inline-block mb-6 md:mb-0 md:mr-8 text-indigo-600" style="width:80px;height:80px; flex-shrink:0;">
+                        <!-- VR Headset Glyph -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 24 24">
+                            <rect x="2" y="7" width="20" height="10" rx="5" fill="#6366f1"/>
+                            <rect x="6" y="10" width="4" height="4" rx="2" fill="#fff"/>
+                            <rect x="14" y="10" width="4" height="4" rx="2" fill="#fff"/>
+                            <rect x="8" y="14" width="8" height="2" rx="1" fill="#6366f1"/>
+                        </svg>
+                    </span>
+                    <div class="w-full">
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Innovation Gallery</h3>
+                        <p class="text-gray-700 mb-4 text-lg">
+                            Explore my Innovation Gallery, a collection of immersive drone visuals and concepts. 
+                            <span class="font-semibold"></span> Collaborated With Microsoft Designer AI to create a dynamic slideshow experience.
+                        </p>
+                        <div class="relative bg-gray-100 rounded-lg overflow-hidden mb-4" id="vr-slideshow-container" style="max-width:600px;">
+                            <img id="vr-slideshow-img" src="Innovation/slide1 (1).jpeg" alt="Innovation Slide" class="w-full h-64 object-cover transition duration-300">
+                            <button id="vr-prev" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100">
+                                &#8592;
+                            </button>
+                            <button id="vr-next" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100">
+                                &#8594;
+                            </button>
+                            <button id="vr-fullscreen" class="absolute bottom-2 right-36 bg-indigo-600 text-white rounded px-3 py-1 text-sm shadow hover:bg-indigo-800">
+                                VR Button
+                            </button>
+                            <button id="regular-fullscreen" class="absolute bottom-2 right-2 bg-blue-600 text-white rounded px-3 py-1 text-sm shadow hover:bg-blue-800">
+                                Regular Fullscreen
+                            </button>
+                        </div>
+                        <p class="text-gray-600 mb-2">Click arrows to browse. Expand for VR or regular fullscreen experience.</p>
+                    </div>
                 </div>
-                <p class="text-gray-600 mb-2">Click arrows to browse. Expand for fullscreen experience.</p>
             </div>
-        </div>
-        </div>
         </section>
         <!-- End of Projects Section -->
     </main>
@@ -420,7 +423,7 @@
     </script>
 
     <!-- JavaScript for Slideshow Animation -->
-    <script>
+<script>
     // VR Slideshow logic
     const vrImages = [
         "Innovation/slide1 (1).jpeg",
@@ -444,6 +447,7 @@
     const vrPrev = document.getElementById('vr-prev');
     const vrNext = document.getElementById('vr-next');
     const vrFullscreen = document.getElementById('vr-fullscreen');
+    const regularFullscreen = document.getElementById('regular-fullscreen');
     const vrContainer = document.getElementById('vr-slideshow-container');
 
     function showVrImage(idx) {
@@ -457,6 +461,7 @@
         vrIndex = (vrIndex + 1) % vrImages.length;
         showVrImage(vrIndex);
     };
+    // VR Button (existing fullscreen)
     vrFullscreen.onclick = () => {
         if (vrContainer.requestFullscreen) {
             vrContainer.requestFullscreen();
@@ -466,7 +471,45 @@
             vrContainer.msRequestFullscreen();
         }
     };
+    // Regular Fullscreen Module
+    regularFullscreen.onclick = () => {
+        // Create overlay
+        let overlay = document.createElement('div');
+        overlay.id = 'regular-fullscreen-overlay';
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.background = 'rgba(0,0,0,0.95)';
+        overlay.style.zIndex = '9999';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.innerHTML = `
+            <div style="position:relative;max-width:90vw;max-height:90vh;">
+                <img src="${vrImages[vrIndex]}" style="max-width:100%;max-height:80vh;box-shadow:0 0 40px #000;border-radius:1rem;">
+                <button id="overlay-prev" style="position:absolute;left:-60px;top:50%;transform:translateY(-50%);background:#fff;color:#222;padding:1rem 1.5rem;border-radius:50%;font-size:2rem;box-shadow:0 2px 8px #000;cursor:pointer;">&#8592;</button>
+                <button id="overlay-next" style="position:absolute;right:-60px;top:50%;transform:translateY(-50%);background:#fff;color:#222;padding:1rem 1.5rem;border-radius:50%;font-size:2rem;box-shadow:0 2px 8px #000;cursor:pointer;">&#8594;</button>
+                <button id="overlay-close" style="position:absolute;top:-60px;right:0;background:#e11d48;color:#fff;padding:0.75rem 1.5rem;border-radius:1rem;font-size:1.25rem;box-shadow:0 2px 8px #000;cursor:pointer;">Close</button>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+
+        // Overlay navigation
+        document.getElementById('overlay-prev').onclick = () => {
+            vrIndex = (vrIndex - 1 + vrImages.length) % vrImages.length;
+            overlay.querySelector('img').src = vrImages[vrIndex];
+        };
+        document.getElementById('overlay-next').onclick = () => {
+            vrIndex = (vrIndex + 1) % vrImages.length;
+            overlay.querySelector('img').src = vrImages[vrIndex];
+        };
+        document.getElementById('overlay-close').onclick = () => {
+            document.body.removeChild(overlay);
+        };
+    };
     showVrImage(vrIndex);
-</script>
+</script
 </body>
 </html>
