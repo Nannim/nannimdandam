@@ -342,6 +342,37 @@
                     </div>
                 </div>
             </div>
+             <!-- Project Four: Innovation VR Slideshow -->
+        <div class="bg-white p-8 rounded-lg shadow flex flex-col md:flex-row items-center">
+            <span class="inline-block mb-6 md:mb-0 md:mr-8 text-indigo-600" style="width:80px;height:80px; flex-shrink:0;">
+                <!-- VR Headset Glyph -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 24 24">
+                    <rect x="2" y="7" width="20" height="10" rx="5" fill="#6366f1"/>
+                    <rect x="6" y="10" width="4" height="4" rx="2" fill="#fff"/>
+                    <rect x="14" y="10" width="4" height="4" rx="2" fill="#fff"/>
+                    <rect x="8" y="14" width="8" height="2" rx="1" fill="#6366f1"/>
+                </svg>
+            </span>
+            <div class="w-full">
+                <h3 class="text-2xl font-semibold text-blue-800 mb-4">Innovation VR Gallery</h3>
+                <p class="text-gray-700 mb-4 text-lg">
+                    Explore my Innovation VR Gallery, a collection of immersive visuals and concepts. This expandable slideshow showcases selected works from the <span class="font-semibold">Innovation</span> folder, highlighting creativity and forward-thinking design.
+                </p>
+                <div class="relative bg-gray-100 rounded-lg overflow-hidden mb-4" id="vr-slideshow-container" style="max-width:600px;">
+                    <img id="vr-slideshow-img" src="Innovation/slide1.jpg" alt="Innovation Slide" class="w-full h-64 object-cover transition duration-300">
+                    <button id="vr-prev" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100">
+                        &#8592;
+                    </button>
+                    <button id="vr-next" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-opacity-100">
+                        &#8594;
+                    </button>
+                    <button id="vr-fullscreen" class="absolute bottom-2 right-2 bg-indigo-600 text-white rounded px-3 py-1 text-sm shadow hover:bg-indigo-800">
+                        Fullscreen
+                    </button>
+                </div>
+                <p class="text-gray-600 mb-2">Click arrows to browse. Expand for fullscreen experience.</p>
+            </div>
+        </div>
         </section>
         <!-- End of Projects Section -->
     </main>
@@ -385,5 +416,55 @@
         // Show home section by default
         showSection('home');
     </script>
+
+    <!-- JavaScript for Slideshow Animation -->
+    <script>
+    // VR Slideshow logic
+    const vrImages = [
+        "Innovation/slide1 (1).jpeg",
+        "Innovation/slide1 (2).jpeg",
+        "Innovation/slide1 (3).jpeg",
+        "Innovation/slide1 (4).jpeg",
+        "Innovation/slide1 (5).jpeg",
+        "Innovation/slide1 (6).jpeg",
+        "Innovation/slide1 (7).jpeg",
+        "Innovation/slide1 (8).jpeg",
+        "Innovation/slide1 (9).jpeg",
+        "Innovation/slide1 (10).jpeg",
+        "Innovation/slide1 (11).jpeg",
+        "Innovation/slide1 (12).jpeg",
+        "Innovation/slide1 (13).jpeg",
+        "Innovation/slide1 (14).jpeg",
+        "Innovation/slide1 (15).jpeg"
+    ];
+    let vrIndex = 0;
+    const vrImg = document.getElementById('vr-slideshow-img');
+    const vrPrev = document.getElementById('vr-prev');
+    const vrNext = document.getElementById('vr-next');
+    const vrFullscreen = document.getElementById('vr-fullscreen');
+    const vrContainer = document.getElementById('vr-slideshow-container');
+
+    function showVrImage(idx) {
+        vrImg.src = vrImages[idx];
+    }
+    vrPrev.onclick = () => {
+        vrIndex = (vrIndex - 1 + vrImages.length) % vrImages.length;
+        showVrImage(vrIndex);
+    };
+    vrNext.onclick = () => {
+        vrIndex = (vrIndex + 1) % vrImages.length;
+        showVrImage(vrIndex);
+    };
+    vrFullscreen.onclick = () => {
+        if (vrContainer.requestFullscreen) {
+            vrContainer.requestFullscreen();
+        } else if (vrContainer.webkitRequestFullscreen) {
+            vrContainer.webkitRequestFullscreen();
+        } else if (vrContainer.msRequestFullscreen) {
+            vrContainer.msRequestFullscreen();
+        }
+    };
+    showVrImage(vrIndex);
+</script>
 </body>
 </html>
