@@ -47,6 +47,40 @@
             .hero-bg { padding: 2rem; }
             .profile-img { margin: 0 auto; }
         }
+        
+        /* Dark mode styles */
+        body.dark {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        body.dark .bg-white { background-color: #2d3748 !important; }
+        body.dark .text-gray-700 { color: #e2e8f0 !important; }
+        body.dark .text-blue-800 { color: #90cdf4 !important; }
+        body.dark .shadow { box-shadow: 0 2px 8px #0004 !important; }
+        body.dark .nav-link { color: #e2e8f0 !important; }
+        body.dark .bg-blue-800 { background-color: #2a4365 !important; }
+        body.dark .bg-gray-100 { background-color: #2d3748 !important; }
+        body.dark .bg-gray-300 { background-color: #4a5568 !important; }
+        body.dark .bg-gray-600 { background-color: #2d3748 !important; }
+        body.dark .border-white { border-color: #2d3748 !important; }
+        body.dark .hover\:bg-gray-200:hover { background-color: #4a5568 !important; }
+        body.dark .hover\:text-blue-200:hover { color: #bee3f8 !important; }
+        body.dark .bg-white.text-blue-800 { background-color: #2d3748 !important; color: #90cdf4 !important; }
+        body.dark .bg-transparent.border-2.border-white.text-white { border-color: #90cdf4 !important; color: #90cdf4 !important; }
+        body.dark .bg-blue-600 { background-color: #3182ce !important; }
+        body.dark .bg-indigo-600 { background-color: #5a67d8 !important; }
+        body.dark .bg-blue-900 { background-color: #1a202c !important; }
+        body.dark .text-blue-600 { color: #63b3ed !important; }
+        body.dark .text-blue-400 { color: #63b3ed !important; }
+        body.dark .text-red-500 { color: #feb2b2 !important; }
+        body.dark .text-green-600 { color: #68d391 !important; }
+        body.dark .text-yellow-500 { color: #faf089 !important; }
+        body.dark .text-indigo-600 { color: #b3bcf5 !important; }
+        body.dark .bg-gray-800 { background-color: #1a202c !important; }
+        body.dark .text-gray-600 { color: #cbd5e1 !important; }
+        body.dark .text-gray-800 { color: #e2e8f0 !important; }
+        body.dark .text-gray-200 { color: #e2e8f0 !important; }
+
     </style>
 </head>
 <body class="bg-gray-100 font-sans text-gray-800">
@@ -65,6 +99,7 @@
                     <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600" data-section="skills">Skills</span>
                     <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600" data-section="achievements">Achievements</span>
                     <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600" data-section="projects">Projects</span>
+                    <span class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600" data-section="settings">Settings</span>
                 </div>
             </div>
         </div>
@@ -380,6 +415,21 @@
                 </div>
             </div>
         </section>
+        <!-- Settings Section -->
+        <section id="settings" class="section-hidden">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Settings</h2>
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow flex items-center">
+                <span class="mr-4 text-lg text-gray-700 dark:text-gray-200">Theme:</span>
+                <label class="flex items-center cursor-pointer">
+                    <span class="mr-2 text-gray-700 dark:text-gray-200">Light</span>
+                    <input type="checkbox" id="theme-toggle" class="hidden">
+                    <span id="toggle-switch" class="w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-600 rounded-full p-1 transition-colors duration-300">
+                        <span id="toggle-knob" class="bg-white dark:bg-blue-800 w-6 h-6 rounded-full shadow-md transform transition-transform duration-300"></span>
+                    </span>
+                    <span class="ml-2 text-gray-700 dark:text-gray-200">Dark</span>
+                </label>
+            </div>
+        </section>
         <!-- End of Projects Section -->
     </main>
 
@@ -419,12 +469,42 @@
             });
         });
 
-        // Show home section by default
-        showSection('home');
-    </script>
+    // Show home section by default
+    showSection('home');
 
-    <!-- JavaScript for Slideshow Animation -->
-<script>
+    // Dark mode toggle logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const toggleSwitch = document.getElementById('toggle-switch');
+    const toggleKnob = document.getElementById('toggle-knob');
+
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+        themeToggle.checked = true;
+        toggleKnob.style.transform = 'translateX(24px)';
+    }
+
+    themeToggle.addEventListener('change', function() {
+        if (this.checked) {
+            document.body.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            toggleKnob.style.transform = 'translateX(24px)';
+        } else {
+            document.body.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            toggleKnob.style.transform = 'translateX(0)';
+        }
+    });
+
+    // Make switch clickable
+    toggleSwitch.addEventListener('click', function() {
+        themeToggle.checked = !themeToggle.checked;
+        themeToggle.dispatchEvent(new Event('change'));
+    });
+
+
+    //<!-- // JavaScript for Slideshow Animation -->
+
     // VR Slideshow logic
     const vrImages = [
         "Innovation/slide1 (1).jpeg",
@@ -511,6 +591,12 @@
         };
     };
     showVrImage(vrIndex);
-</script
+</script>
+<script>
+    // ...existing JS...
+
+
+    // ...existing slideshow JS...
+</script>
 </body>
 </html>
